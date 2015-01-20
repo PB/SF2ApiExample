@@ -1,0 +1,10 @@
+Acme\ApiBundle\Entity\Category:
+    properties:
+        name:
+            - NotBlank: ~
+            - NotNull: ~
+            - Length:
+                min: 2
+                max: 255
+                minMessage: "Your name must be at least {{ limit }} characters length"
+                maxMessage: "Your name name cannot be longer than {{ limit }} characters length"
