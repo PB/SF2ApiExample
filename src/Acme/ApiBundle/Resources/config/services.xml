@@ -13,4 +13,16 @@
         </service>
     </services>
     -->
+
+    <parameters>
+        <parameter key="acme_api.category.handler.class">Acme\ApiBundle\Handler\CategoryHandler</parameter>
+        <parameter key="acme_api.category.class">Acme\ApiBundle\Entity\Category</parameter>
+    </parameters>
+
+    <services>
+        <service id="acme_api.category.handler" class="%acme_api.category.handler.class%">
+            <argument type="service" id="doctrine.orm.entity_manager" />
+            <argument>%acme_api.category.class%</argument>
+        </service>
+    </services>
 </container>
