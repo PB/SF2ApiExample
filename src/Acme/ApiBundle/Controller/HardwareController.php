@@ -253,7 +253,8 @@ class HardwareController extends FOSRestController
      * @ApiDoc(
      *   resource = true,
      *   statusCodes = {
-     *     200 = "Returned when successful"
+     *     200 = "Returned when successful",
+     *     400 = "Returned when the form has errors"
      *   }
      * )
      *
