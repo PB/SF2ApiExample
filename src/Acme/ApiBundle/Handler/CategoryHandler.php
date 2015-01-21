@@ -64,7 +64,7 @@ class CategoryHandler implements CategoryHandlerInterface
         $form = $this->formFactory->create(new CategoryType(), $category, array('method' => $method));
         $form->submit($parameters, 'PATCH' !== $method);
         if ($form->isValid()) {
-            $page = $form->getData();
+            $category = $form->getData();
             $this->om->persist($category);
             $this->om->flush($category);
             return $category;

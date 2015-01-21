@@ -3,3 +3,9 @@ acme_api_Category:
     prefix: /v1
     resource: "Acme\ApiBundle\Controller\CategoryController"
     name_prefix:  api_1_ # naming collision
+
+acme_api_Hardware:
+    type: rest
+    prefix: /v1
+    resource: "Acme\ApiBundle\Controller\HardwareController"
+    name_prefix:  api_1_ # naming collision

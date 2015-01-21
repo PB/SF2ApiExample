@@ -1,4 +1,6 @@
 Acme\ApiBundle\Entity\Category:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: name
     properties:
         name:
             - NotBlank: ~
@@ -7,4 +9,29 @@ Acme\ApiBundle\Entity\Category:
                 min: 2
                 max: 255
                 minMessage: "Your name must be at least {{ limit }} characters length"
-                maxMessage: "Your name name cannot be longer than {{ limit }} characters length"
+                maxMessage: "Your name cannot be longer than {{ limit }} characters length"
+
+Acme\ApiBundle\Entity\Hardware:
+    properties:
+        name:
+            - NotBlank: ~
+            - NotNull: ~
+            - Length:
+                min: 2
+                max: 255
+                minMessage: "Your name must be at least {{ limit }} characters length"
+                maxMessage: "Your name cannot be longer than {{ limit }} characters length"
+        serial:
+            - NotBlank: ~
+            - NotNull: ~
+            - Length:
+                min: 2
+                max: 255
+                minMessage: "Your serial must be at least {{ limit }} characters length"
+                maxMessage: "Your serial cannot be longer than {{ limit }} characters length"
+        available:
+            - NotBlank: ~
+            - NotNull: ~
+            - Type:
+                type: boolean
+                message: The value {{ value }} is not a valid {{ type }}.

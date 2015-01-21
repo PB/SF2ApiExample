@@ -52,8 +52,8 @@ class Hardware
     private $available;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Category", inversedBy="hardwares")
-     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Category")
+     * @ORM\JoinColumn(name="category_id", referencedColumnName="id", nullable=false)
      */
     protected $category;
 

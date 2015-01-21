@@ -25,19 +25,10 @@ class Category
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=255)
+     * @ORM\Column(name="name", type="string", length=255, unique=true)
      */
     private $name;
 
-    /**
-     * @ORM\OneToMany(targetEntity="Hardware", mappedBy="category")
-     */
-    protected $hardwares;
-
-    public function __construct()
-    {
-        $this->hardwares = new ArrayCollection();
-    }
 
     /**
      * Get id
@@ -72,36 +63,8 @@ class Category
         return $this->name;
     }
 
-    /**
-     * Add hardwares
-     *
-     * @param \Acme\ApiBundle\Entity\Hardware $hardwares
-     * @return Category
-     */
-    public function addHardware(\Acme\ApiBundle\Entity\Hardware $hardwares)
+    public function __toString()
     {
-        $this->hardwares[] = $hardwares;
-
-        return $this;
-    }
-
-    /**
-     * Remove hardwares
-     *
-     * @param \Acme\ApiBundle\Entity\Hardware $hardwares
-     */
-    public function removeHardware(\Acme\ApiBundle\Entity\Hardware $hardwares)
-    {
-        $this->hardwares->removeElement($hardwares);
-    }
-
-    /**
-     * Get hardwares
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getHardwares()
-    {
-        return $this->hardwares;
+        return $this->id . ' for '. $this->name;
     }
 }

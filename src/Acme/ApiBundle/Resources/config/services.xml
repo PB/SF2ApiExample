@@ -17,12 +17,19 @@
     <parameters>
         <parameter key="acme_api.category.handler.class">Acme\ApiBundle\Handler\CategoryHandler</parameter>
         <parameter key="acme_api.category.class">Acme\ApiBundle\Entity\Category</parameter>
+        <parameter key="acme_api.hardware.handler.class">Acme\ApiBundle\Handler\HardwareHandler</parameter>
+        <parameter key="acme_api.hardware.class">Acme\ApiBundle\Entity\Hardware</parameter>
     </parameters>
 
     <services>
         <service id="acme_api.category.handler" class="%acme_api.category.handler.class%">
             <argument type="service" id="doctrine.orm.entity_manager" />
             <argument>%acme_api.category.class%</argument>
+            <argument type="service" id="form.factory"></argument>
+        </service>
+        <service id="acme_api.hardware.handler" class="%acme_api.hardware.handler.class%">
+            <argument type="service" id="doctrine.orm.entity_manager" />
+            <argument>%acme_api.hardware.class%</argument>
             <argument type="service" id="form.factory"></argument>
         </service>
     </services>
