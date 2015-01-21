@@ -3,11 +3,12 @@
 namespace Acme\ApiBundle\DataFixtures\ORM;
 
 use Acme\ApiBundle\Entity\Category;
+use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\Doctrine;
-use Doctrine\Common\DataFixtures\FixtureInterface;
+use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 
-class LoadCategoryData implements FixtureInterface
+class LoadCategoryData extends AbstractFixture implements OrderedFixtureInterface
 {
 
     /**
@@ -30,5 +31,15 @@ class LoadCategoryData implements FixtureInterface
         $manager->persist($printer);
 
         $manager->flush();
+    }
+
+    /**
+     * Get the order of this fixture
+     *
+     * @return integer
+     */
+    function getOrder()
+    {
+        return 1;
     }
 }
