@@ -8,7 +8,7 @@ Interface CategoryInterface
      * Set name
      *
      * @param string $name
-     * @return PageInterface
+     * @return CategoryInterface
      */
     public function setName($name);
 

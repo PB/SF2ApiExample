@@ -25,7 +25,7 @@ interface CategoryHandlerInterface
      *
      * @return array
      */
-    //public function all($limit = 5, $offset = 0);
+    public function all($limit = 5, $offset = 0);
 
     /**
      * Post Category, creates a new Category.
@@ -36,7 +36,7 @@ interface CategoryHandlerInterface
      *
      * @return CategoryInterface
      */
-    //public function post(array $parameters);
+    public function post(array $parameters);
 
     /**
      * Edit a Category.
@@ -48,7 +48,7 @@ interface CategoryHandlerInterface
      *
      * @return CategoryInterface
      */
-    //public function put(CategoryInterface $category, array $parameters);
+    public function put( $category, array $parameters);
 
     /**
      * Partially update a Category.
@@ -60,5 +60,16 @@ interface CategoryHandlerInterface
      *
      * @return CategoryInterface
      */
-    //public function patch(CategoryInterface $category, array $parameters);
+    public function patch( $category, array $parameters);
+
+    /**
+     * Delete a Category given the identifier
+     *
+     * @api
+     *
+     * @param mixed $id
+     *
+     * @return CategoryInterface
+     */
+    public function delete($id);
 }

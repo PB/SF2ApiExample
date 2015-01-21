@@ -23,6 +23,7 @@
         <service id="acme_api.category.handler" class="%acme_api.category.handler.class%">
             <argument type="service" id="doctrine.orm.entity_manager" />
             <argument>%acme_api.category.class%</argument>
+            <argument type="service" id="form.factory"></argument>
         </service>
     </services>
 </container>
